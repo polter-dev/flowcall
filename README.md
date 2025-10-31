@@ -5,9 +5,9 @@ A real-time chat app for voice, video, and text that adapts to poor networks by 
 Goal-> Learn real-time comms, observability, and network adaptation 
 
 # Tech Stack (to be updated as project gets worked on more)
-  -React + Vite
-  -Typescript
-  -Node.js + Express
+  - React + Vite
+  - Typescript
+  - Node.js + Express
 
 -----------------------------------------------------
 
