@@ -14,12 +14,13 @@ const TabGroup = () => {
                 {tabs.map((tabs => <button className = 'px-4 border py-3 hover:bg-blue300'>
                     {tabs}</button>))}
             </div>
-
+                    {/* display content for tabs 
             <div className ='flex flex-col mx-auto'>
                     <div>Content One</div>
                     <div>Content Two</div>
                     <div>Content Three</div>
             </div>
+            */}
         </div>
     )
 }
