@@ -8,6 +8,7 @@ Goal-> Learn real-time comms, observability, and network adaptation
   - React + Vite
   - Typescript
   - Node.js + Express
+  - WebRTC + ICE
 
 -----------------------------------------------------
 
