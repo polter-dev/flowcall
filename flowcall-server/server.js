@@ -18,6 +18,7 @@ const rooms = {};
 io.on("connection", (socket) => {
     console.log("User connected:", socket.id);
 
+
     
     socket.on ("create-room", () => {
         const code = Math.random().toString(36).substring(2,8)
@@ -34,6 +35,20 @@ io.on("connection", (socket) => {
         } else {
             socket.emit("error", "Room does not exist");
         }
+    });
+
+    socket.on("signal", ({ to, data }) => {
+        console.log(`Signal from ${socket.id} -> ${to}`);
+        io.to(to).emit("signal", { from: socket.id, data });
+    });
+
+    socket.on("ice-candidate", ({ to, candidate }) => {
+        console.log(`ICE from ${socket.id} -> ${to}`);
+        io.to(to).emit("ice-candidate", { from: socket.id, candidate });
+    });
+
+    socket.on("chat", ({ room, message }) => {
+        io.to(room).emit("chat", { sender: socket.id, message });
     });
 
     socket.on("disconnect", () => {
